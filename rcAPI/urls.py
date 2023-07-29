@@ -8,8 +8,13 @@ router = routers.DefaultRouter()
 #router.register('api/inmueble', views.InmuebleViewSet, 'inmueble')
 #router.register('api/predict', views.predict, 'prediction')
 #urlpatterns = router.urls
-router.register('rcAPI', views.InmuebleViewSet)
+router.register('inmuebles', views.InmuebleViewSet)
+
 urlpatterns = [
     path('api/',include(router.urls)),
-    path('predict/',views.predict),
+    path('api/predict',views.predict),
+    path('api/register', views.register),
+    path('api/login', views.login),
+    path('api/user', views.getUsers),
+    path('api/logout', views.logout)
 ]
